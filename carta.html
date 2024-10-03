@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje para Mi Novia</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+        .mensaje {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffcccb;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .corazon {
+            font-size: 50px;
+            color: red;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="mensaje">
+        <h1>¡Hola, mi amor! 💖</h1>
+        <p>Solo quería decirte que eres lo mejor que me ha pasado.</p>
+        <div class="corazon">❤️</div>
+        <p>Te quiero mucho!</p>
+    </div>
+</body>
+</html>
