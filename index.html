@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensaje para Wilmar</title>
+    <title>Mensaje para Marye</title>
     <style>
         body {
             display: flex;
@@ -13,7 +12,13 @@
             height: 100vh;
             background-color: #f0f8ff;
             font-family: Arial, sans-serif;
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="red"%3E%3Cpath d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/%3E%3C/svg%3E');
+            background-size: 50px 50px;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            transform: rotate(45deg);
         }
+
         .mensaje {
             text-align: center;
             padding: 20px;
@@ -21,16 +26,20 @@
             background-color: #ffcccb;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             animation: fadeIn 2s;
+            transform: rotate(-45deg); /* Para que el mensaje no esté inclinado */
         }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
         .corazon {
             font-size: 50px;
             color: red;
             animation: heartbeat 1s infinite;
         }
+
         @keyframes heartbeat {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.2); }
@@ -39,10 +48,10 @@
 </head>
 <body>
     <div class="mensaje">
-        <h1>¡Hola, amor! 💖</h1>
-        <p>Solo quería decirte que perdon por todo lo malo y que estoy muy emocionado por conocerte</p>
+        <h1>¡Hola Marye! 💖</h1>
+        <p>Admiro mucho tu fortaleza y tu capacidad para superar cualquier obstáculo, te aprecio por eso.</p>
         <div class="corazon">❤️</div>
-        <p>Te quiero mucho!</p>
+        <p>Espero un día podamos vernos</p>
     </div>
 </body>
 </html>
