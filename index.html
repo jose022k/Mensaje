@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensaje para Marye</title>
+    <title>Mensaje para Yazmin</title>
     <style>
         body {
             display: flex;
@@ -39,19 +39,65 @@
             color: red;
             animation: heartbeat 1s infinite;
         }
-        
+
         @keyframes heartbeat {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.2); }
         }
+
+        .boton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 20px;
+            color: white;
+            background-color: #ff4d4d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .boton:hover {
+            background-color: #ff1a1a;
+        }
+
+        .mensaje-beso {
+            display: none;
+            margin-top: 20px;
+            font-size: 30px;
+            color: red;
+            animation: fadeIn 2s;
+        }
+
+        .beso {
+            font-size: 50px;
+            margin-top: 10px;
+        }
     </style>
+    <script>
+        function mostrarMensaje() {
+            const mensajeBeso = document.getElementById('mensaje-beso');
+            // Alternar la visibilidad del mensaje
+            if (mensajeBeso.style.display === 'block') {
+                mensajeBeso.style.display = 'none';
+            } else {
+                mensajeBeso.style.display = 'block';
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="mensaje">
-        <h1>¡Hola Marye! 💖</h1>
-        <p>Admiro mucho tu fortaleza y tu capacidad para superar cualquier obstáculo, te aprecio por eso.</p>
+        <h1>¡Hola Yazmin! 💖</h1>
+        <p>Me gusta mucho tu personalidad y tu capacidad para superar cualquier obstáculo, te aprecio por eso.</p>
         <div class="corazon">❤️</div>
-        <p>Espero un día podamos vernos</p>
+        <p>Ah... y te quiero mucho 👩‍❤️‍💋‍👨 </p>
+        <button class="boton" onclick="mostrarMensaje()">Presiona acá</button>
+        
+        <div id="mensaje-beso" class="mensaje-beso">
+            TE MANDO BESOS A LA DISTANCIA ❤️❤️
+            <div class="beso">😘</div>
+        </div>
     </div>
 </body>
 </html>
