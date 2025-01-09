@@ -1,30 +1,161 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mensaje de Cumpleaños</title>
-  <link rel="stylesheet" href="css/estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje de Amor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6f2; /* Rosa pastel */
+            font-family: 'Pacifico', cursive;
+        }
+
+        .envelope-container {
+            position: relative;
+            width: 200px;
+            height: 150px;
+            cursor: pointer;
+            transform: translateY(0);
+            transition: transform 0.5s ease-in-out;
+            animation: bounce 2s infinite; /* Animación infinita */
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .envelope-container:hover {
+            transform: translateY(-10px);
+        }
+
+        .envelope {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border: 2px solid #ff78a0;
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .envelope::before, .envelope::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ff78a0;
+            z-index: -1;
+            transform-origin: bottom;
+            transition: transform 0.5s ease;
+        }
+
+        .envelope::before {
+            transform: rotateX(0deg);
+            top: 0;
+        }
+
+        .envelope::after {
+            transform: rotateX(-180deg);
+            bottom: 0;
+        }
+
+        .envelope.opened::before {
+            transform: rotateX(180deg);
+        }
+
+        .envelope.opened::after {
+            transform: rotateX(0deg);
+        }
+
+        .envelope.opened {
+            animation: none; /* Detener animación al abrir */
+        }
+
+        .envelope span {
+            font-size: 1.5em;
+            color: red;
+            z-index: 2;
+            position: absolute;
+        }
+
+        .message-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .message-container p {
+            font-size: 2rem;
+            color: #ff78a0;
+            margin: 0;
+        }
+
+        .hearts {
+            position: relative;
+            margin-top: 10px;
+            color: #ff78a0;
+            font-size: 3rem;
+        }
+
+        .visible {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+    </style>
 </head>
 <body>
-  <div class="contenedor">
-    <img src="oso.gif" alt="Oso de cumpleaños" class="gif-principal">
-    <button id="boton-abrir" class="boton">¡Ábreme!</button>
 
-    <div id="mensaje-cumple" class="mensaje oculto">
-      <p>En tu cumpleaños, quiero recordarte lo valiosa que eres. Que este nuevo año de vida te traiga paz, amor y muchas bendiciones.<br>
-        ¡Feliz cumpleaños, Te quiero!
-      </p>
-      <button id="boton-abrir-despues" class="boton">Ábreme después de leer</button>
+<div class="envelope-container cute-animation" onclick="openEnvelope()">
+    <div class="envelope">
+        <span id="open-text">ÁBREME</span>
     </div>
+</div>
 
-    <div id="mensaje-noviazgo" class="mensaje oculto">
-      <p>¿Te gustaría ser mi novia?</p>
-      <img src="oso_abrazo.gif" alt="Oso abrazo" class="gif-abrazo">
-    </div>
-  </div>
+<div class="message-container" id="message-container">
+    <p>Felices 2 meses mi amor, adoro estar contigo así sea a la distancia, eres muy importante para mí</p>
+    <p>TE AMO ❤️</p>
+    <div class="hearts">❤️❤️</div>
+</div>
 
-  <script src="js/j.js"></script>
+<script>
+    function openEnvelope() {
+        const envelope = document.querySelector('.envelope');
+        const openText = document.getElementById('open-text');
+        const messageContainer = document.getElementById('message-container');
+
+        envelope.classList.add('opened'); // Abre el sobre
+        openText.style.display = 'none'; // Oculta el texto "ÁBREME"
+        messageContainer.classList.add('visible'); // Muestra el mensaje
+    }
+</script>
+
 </body>
 </html>
 
