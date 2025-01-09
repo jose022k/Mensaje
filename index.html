@@ -20,8 +20,8 @@
 
         .envelope-container {
             position: relative;
-            width: 200px;
-            height: 150px;
+            width: 180px;
+            height: 135px;
             cursor: pointer;
             transform: translateY(0);
             transition: transform 0.5s ease-in-out;
@@ -89,7 +89,7 @@
         }
 
         .envelope span {
-            font-size: 1.5em;
+            font-size: 1.2em;
             color: red;
             z-index: 2;
             position: absolute;
@@ -103,24 +103,26 @@
             text-align: center;
             z-index: 10;
             background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             opacity: 0;
             visibility: hidden;
+            width: 90%; /* Ocupa el 90% del ancho */
+            max-width: 400px; /* Límite de ancho en dispositivos grandes */
         }
 
         .message-container p {
-            font-size: 2rem;
+            font-size: 1.5rem; /* Tamaño del texto adaptable */
             color: #ff78a0;
-            margin: 0;
+            margin: 10px 0;
         }
 
         .hearts {
             position: relative;
             margin-top: 10px;
             color: #ff78a0;
-            font-size: 3rem;
+            font-size: 2rem;
         }
 
         .visible {
@@ -128,11 +130,31 @@
             visibility: visible;
             transition: opacity 0.8s ease, visibility 0.8s ease;
         }
+
+        /* Estilos Responsivos */
+        @media (max-width: 480px) {
+            .envelope-container {
+                width: 140px;
+                height: 105px;
+            }
+
+            .envelope span {
+                font-size: 1em;
+            }
+
+            .message-container p {
+                font-size: 1.2rem; /* Reduce el texto en pantallas pequeñas */
+            }
+
+            .hearts {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-<div class="envelope-container cute-animation" onclick="openEnvelope()">
+<div class="envelope-container" onclick="openEnvelope()">
     <div class="envelope">
         <span id="open-text">ÁBREME</span>
     </div>
@@ -158,4 +180,3 @@
 
 </body>
 </html>
-
