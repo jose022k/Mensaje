@@ -1,182 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensaje de Amor</title>
+    <title>Para Mi Amor</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap');
-
         body {
+            background-color: #ffcc99;
             margin: 0;
-            padding: 0;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #ffe6f2; /* Rosa pastel */
-            font-family: 'Pacifico', cursive;
         }
-
-        .envelope-container {
-            position: relative;
-            width: 180px;
-            height: 135px;
+        .rosa {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('flor.png');
+            background-size: cover;
+            background-position: center;
             cursor: pointer;
-            transform: translateY(0);
-            transition: transform 0.5s ease-in-out;
-            animation: bounce 2s infinite; /* Animación infinita */
+            transition: transform 0.2s ease-in-out;
+            animation: girar 5s linear infinite, brillo 1.5s infinite alternate;
         }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
+        
+        @keyframes girar {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
-
-        .envelope-container:hover {
-            transform: translateY(-10px);
-        }
-
-        .envelope {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            border: 2px solid #ff78a0;
-            border-radius: 5px;
-            overflow: hidden;
-            z-index: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .envelope::before, .envelope::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: #ff78a0;
-            z-index: -1;
-            transform-origin: bottom;
-            transition: transform 0.5s ease;
-        }
-
-        .envelope::before {
-            transform: rotateX(0deg);
-            top: 0;
-        }
-
-        .envelope::after {
-            transform: rotateX(-180deg);
-            bottom: 0;
-        }
-
-        .envelope.opened::before {
-            transform: rotateX(180deg);
-        }
-
-        .envelope.opened::after {
-            transform: rotateX(0deg);
-        }
-
-        .envelope.opened {
-            animation: none; /* Detener animación al abrir */
-        }
-
-        .envelope span {
-            font-size: 1.2em;
-            color: red;
-            z-index: 2;
-            position: absolute;
-        }
-
-        .message-container {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            visibility: hidden;
-            width: 90%; /* Ocupa el 90% del ancho */
-            max-width: 400px; /* Límite de ancho en dispositivos grandes */
-        }
-
-        .message-container p {
-            font-size: 1.5rem; /* Tamaño del texto adaptable */
-            color: #ff78a0;
-            margin: 10px 0;
-        }
-
-        .hearts {
-            position: relative;
-            margin-top: 10px;
-            color: #ff78a0;
-            font-size: 2rem;
-        }
-
-        .visible {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-
-        /* Estilos Responsivos */
-        @media (max-width: 480px) {
-            .envelope-container {
-                width: 140px;
-                height: 105px;
-            }
-
-            .envelope span {
-                font-size: 1em;
-            }
-
-            .message-container p {
-                font-size: 1.2rem; /* Reduce el texto en pantallas pequeñas */
-            }
-
-            .hearts {
-                font-size: 1.8rem;
-            }
+        
+        @keyframes brillo {
+            from { filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.7)); }
+            to { filter: drop-shadow(0 0 15px rgba(255, 255, 0, 1)); }
         }
     </style>
 </head>
 <body>
-
-<div class="envelope-container" onclick="openEnvelope()">
-    <div class="envelope">
-        <span id="open-text">ÁBREME</span>
-    </div>
-</div>
-
-<div class="message-container" id="message-container">
-    <p>Felices 2 meses mi amor, adoro estar contigo así sea a la distancia, eres muy importante para mí</p>
-    <p>TE AMO ❤️</p>
-    <div class="hearts">❤️❤️</div>
-</div>
-
-<script>
-    function openEnvelope() {
-        const envelope = document.querySelector('.envelope');
-        const openText = document.getElementById('open-text');
-        const messageContainer = document.getElementById('message-container');
-
-        envelope.classList.add('opened'); // Abre el sobre
-        openText.style.display = 'none'; // Oculta el texto "ÁBREME"
-        messageContainer.classList.add('visible'); // Muestra el mensaje
-    }
-</script>
-
+    <script>
+        const mensajes = [
+            "Eres mi sol en días grises", "Tu sonrisa ilumina mi mundo", "Te amo más de lo que puedo decir", "Cada día a tu lado es un regalo", 
+            "Eres mi inspiración", "Mi amor por ti es infinito", "Eres mi persona favorita", "A tu lado todo es mejor", "Te elijo siempre", 
+            "Eres el sueño del que nunca quiero despertar", "Tus abrazos son mi lugar favorito", "Cada beso tuyo es magia", "Tú haces que mi corazón lata más fuerte",
+            "Eres mi felicidad", "Te amo más de lo que las palabras pueden expresar", "Cada segundo contigo es un tesoro", "Eres mi destino", "Eres perfecta para mí",
+            "Amarte es mi mayor alegría", "Siempre estaré a tu lado", "Eres mi paz y mi aventura", "Tus ojos son mi universo", "Eres mi más bella casualidad",
+            "Amo cada detalle de ti", "Contigo todo es posible", "Siempre serás mi elección", "Eres mi mejor historia de amor", "Tu amor es mi refugio",
+            "No hay día que no piense en ti", "Tu amor me hace mejor", "Eres mi melodía favorita", "Tu ternura me enamora", "Te amo sin medida",
+            "Cada día me haces más feliz", "Siempre serás mi hogar", "Eres mi mejor capítulo", "Mi amor por ti es eterno", "Tu amor es mi fortuna",
+            "Eres la casualidad más bonita", "Tu amor es mi motor", "Cada día contigo es un sueño hecho realidad", "Amo amarte", "Eres la flor más hermosa",
+            "Eres mi historia favorita", "Siempre en mi corazón", "Eres la luz de mi vida", "Tus besos son mi adicción", "Nuestro amor es único",
+            "Amo cada instante contigo", "Eres mi milagro", "Eres mi otra mitad", "Mi amor por ti crece cada día", "Siempre serás mi prioridad",
+            "Eres mi cielo en la tierra", "Siempre en mi pensamiento", "Amarte es mi felicidad", "Eres mi destino y mi suerte", "Nuestro amor es infinito",
+            "Eres la estrella que ilumina mi vida", "Contigo, el mundo es perfecto", "Tu amor es mi mayor tesoro", "Eres mi poema favorito",
+            "Nuestro amor es eterno", "Eres el latido de mi corazón", "Cada día contigo es un nuevo motivo para sonreír", "Eres mi para siempre",
+            "Eres la mejor decisión de mi vida", "Te amo con cada parte de mi ser", "Tu amor es mi paz", "No existe un lugar mejor que a tu lado",
+            "Siempre quiero estar contigo", "Eres la brisa que acaricia mi alma", "Cada beso tuyo es un pedacito de cielo", "Nuestro amor es el mejor viaje",
+            "Eres la dulzura que endulza mis días", "Te amo más allá de las estrellas", "Siempre en mi alma", "Tú y yo, por siempre juntos",
+            "Tu amor es mi mejor regalo", "Cada latido mío te pertenece", "Te amo con locura", "Siempre serás mi gran amor"
+        ];
+        
+        function crearRosas() {
+            for (let i = 0; i < 80; i++) {
+                let rosa = document.createElement("div");
+                rosa.classList.add("rosa");
+                document.body.appendChild(rosa);
+                rosa.style.left = Math.random() * window.innerWidth + "px";
+                rosa.style.top = Math.random() * window.innerHeight + "px";
+                
+                rosa.addEventListener("click", function () {
+                    alert(mensajes[i]);
+                });
+            }
+        }
+        
+        crearRosas();
+    </script>
 </body>
 </html>
