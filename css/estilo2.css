@@ -1,0 +1,166 @@
+
+
+
+.libro1 img {
+    pointer-events: none;
+    cursor: pointer;
+    transition: border 0.3s ease;
+
+}
+.libro1 img:hover {
+    border: 7px solid rgb(255, 255, 255);
+}
+
+.libro1.seleccionado img  {
+    border: 7px solid rgb(255, 255, 255);
+    pointer-events: none;
+    cursor: pointer;
+    transition: border 0.3s ease;
+}
+
+
+.libro1 img.seleccionado {
+    border: 7px solid rgb(29, 216, 60); 
+}
+
+
+.modal-content-alquiler {
+    background-color: #FEDD59; 
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    margin: auto;
+    width: 90%;
+    max-width: 1100px;
+    z-index: 1001;
+    border: 0,5px solid #000; 
+}
+
+/* Estilo para el botón de cierre del modal */
+.modal-content-alquiler .close {
+    color: #000;
+    position: absolute; 
+    top: 10px; 
+    right: 20px; 
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.modal-content-alquiler .close:hover,
+.modal-content-alquiler .close:focus {
+    color: #FFF;
+    text-decoration: none;
+}
+
+
+#modal_alquiler {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    padding-top: 50px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+
+
+/* Estilo para el botón de apartar */
+#apartarBtn {
+    padding: 15px 30px; 
+    background-color: #000;
+    color: #FEDD59; 
+    border: 2px solid #000; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    font-weight: bold;
+    font-size: 1.2em; 
+    margin-left: -800px; 
+    position:  fixed; 
+    top: 100px; 
+    z-index: 999;
+    right: 70px;
+}
+
+
+#apartarBtn:hover {
+    background-color: #FFF; 
+    color: #000; 
+}
+
+
+.libros-container1 {
+    margin-top: 40px;
+}
+
+
+
+.modal-content-alquiler {
+    text-align: center; 
+}
+
+.modal-content-alquiler h2 {
+    margin-bottom: 20px; 
+}
+
+.modal-content-alquiler table {
+    margin: 0 auto; 
+    border-collapse: collapse;
+    width: 100%; 
+    border-radius: 10px; 
+}
+
+.modal-content-alquiler th, .modal-content-alquiler td {
+    padding: 10px 20px; 
+    border: 1px solid #000000; 
+}
+
+.modal-content-alquiler th {
+    background-color: #f2f2f2; 
+}
+
+
+
+.resaltado {
+    background-color: #FFFF00; 
+    font-weight: bold;
+}
+
+
+#aceptarBtn{
+
+    padding: 5px 10px; 
+    background-color: #000; 
+    color: #FEDD59; 
+    border: 2px solid #000; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    font-weight: bold;
+
+}
+
+
+
+#aceptarBtn:hover {
+    background-color: #FFF; 
+    color: #000; 
+}
+
+#total-container {
+    margin-top: 20px; 
+}
+
+
+.cancelarLibro{
+
+ color:  red;
+}
